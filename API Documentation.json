@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "c73fcef3-441c-4d10-926f-4682e62ea06b",
+		"name": "Hotel App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fromDate\": \"2023-06-25\",\r\n    \"toDate\": \"2023-06-30\",\r\n    \"bookedOn\": \"2023-06-25\",\r\n    \"aadharNumber\": \"123456789123\",\r\n    \"numOfRooms\": 3,\r\n    \"roomPrice\": 1000\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/hotel/booking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"hotel",
+						"booking"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transactionId\": 0,\r\n    \"bookingId\": 1,\r\n    \"paymentMode\": \"UPI\",\r\n    \"upiId\": \"upi@bank\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9191/hotel/booking/1/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"hotel",
+						"booking",
+						"1",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
